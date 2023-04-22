@@ -1,7 +1,4 @@
-FROM adoptopenjdk:11-jre-hotspot
-VOLUME /tmp
-ARG DEPENDENCY=target/dependency
-COPY ${DEPENDENCY}/BOOT-INF/lib /app/lib
-COPY ${DEPENDENCY}/META-INF /app/META-INF
-COPY ${DEPENDENCY}/BOOT-INF/classes /app
-ENTRYPOINT ["java","-cp","app:app/lib/*","com.example.demo.DemoApplication"]
+From tomcat:8.0.51-jre8-alpine
+RUN rm -rf /usr/local/tomcat/webapps/*
+COPY ./target/employee-producer-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
+CMD ["catalina.sh","run"]
