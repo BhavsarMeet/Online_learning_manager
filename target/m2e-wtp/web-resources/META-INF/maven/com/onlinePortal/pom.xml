@@ -75,7 +75,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
 	</dependencies>
 
 	<build>
-	<finalName>ROOT</finalName> 
+	<finalName>onlineportal</finalName> 
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
